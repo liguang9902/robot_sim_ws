@@ -4,4 +4,8 @@
     <xacro:include filename="my_base.xacro" />
     <xacro:include filename="my_camera.xacro" />
     <xacro:include filename="my_laser.xacro" />
+    <xacro:include filename="gezebo/move.xacro" />
+    <xacro:include filename="gezebo/laser.xacro" />
+    <xacro:include filename="gezebo/camera.xacro" />
+
 </robot>
