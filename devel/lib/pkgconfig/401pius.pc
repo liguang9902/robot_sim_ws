@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/robot_sim_ws/devel
+
+Name: 401pius
+Description: Description of 401pius
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

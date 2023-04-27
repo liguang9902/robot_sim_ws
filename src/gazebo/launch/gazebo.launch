@@ -1,0 +1,11 @@
+<launch>
+
+    
+    <param name="robot_description" textfile="$(find gazebo)/urdf/demo01_test.urdf" />
+
+    
+    <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+
+    
+    <node pkg="gazebo_ros" type="spawn_model" name="model" args="-urdf -model mycar -param robot_description"  />
+</launch>

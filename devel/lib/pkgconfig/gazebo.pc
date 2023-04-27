@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/robot_sim_ws/devel
+
+Name: gazebo
+Description: Description of gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

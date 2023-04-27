@@ -1,0 +1,2 @@
+401pius:gazebo:segway-401_plus
+-DCMAKE_BUILD_TYPE=RelWithDebInfo -DCATKIN_DEVEL_PREFIX=/home/ubuntu/robot_sim_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/robot_sim_ws/install -G Unix Makefiles

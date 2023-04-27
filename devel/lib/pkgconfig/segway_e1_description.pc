@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/robot_sim_ws/devel
+
+Name: segway_e1_description
+Description: Description of segway_e1_description
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

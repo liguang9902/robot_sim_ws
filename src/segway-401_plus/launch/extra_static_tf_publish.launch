@@ -1,0 +1,14 @@
+<launch>
+  <!-- 其他节点 -->
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="baselink_remap_publish" args="0 0 0 0 0 -1.57 base_link 'Chassis body' " /> -->
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="depth_camera_remap_publish" args="0 0 0 1.57 -1.57 -3.14159 'Front shell depth camera' camera_link " />
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="ultra_front_left_publish" args="0 0 0 0 1.57 0 'Front housing ultrasonic sensor1' ultra_front_left_frame " />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="ultra_front_mid_publish" args="0 0 0 0 1.57 0 'Front housing ultrasonic sensor2' ultra_front_mid_frame " />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="ultra_front_right_publish" args="0 0 0 0 1.57 0 'Front housing ultrasonic sensor3' ultra_front_right_frame " />
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="ultra_rear_left_publish" args="0 0 0 0 1.57 0 'Rear housing ultrasonic sensor1' ultra_rear_left_frame " />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="ultra_rear_mid_publish" args="0 0 0 0 1.57 0 'Rear housing ultrasonic sensor2' ultra_rear_mid_frame " />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="ultra_rear_right_publish" args="0 0 0 0 1.57 0 'Rear housing ultrasonic sensor3' ultra_rear_right_frame " />
+</launch>
