@@ -1,1 +1,1 @@
-controller_joint_names: ['', 'Left rear wheel', 'Right rear wheel', 'Chassis front beam', 'Left front wheel', 'Right front wheel', 'Box door linkage1', 'Box door linkage2', 'Box door linkage3', ]
+controller_joint_names: ['', 'Left_rear_wheel', 'Right_rear_wheel', 'Chassis front beam', 'Left_front_wheel', 'Right_front_wheel', 'Box door linkage1', 'Box door linkage2', 'Box door linkage3', ]

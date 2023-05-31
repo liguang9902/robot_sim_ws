@@ -146,12 +146,12 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        Left front wheel:
+        Left_front_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Left rear wheel:
+        Left_rear_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -187,12 +187,12 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        Right front wheel:
+        Right_front_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Right rear wheel:
+        Right_rear_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false

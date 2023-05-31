@@ -5,6 +5,21 @@
 <robot
   name="segway_e1_description">
   <link name="base_link"/>
+
+  <link name="base_footprint">
+      <visual>
+        <geometry>
+          <sphere radius="0.001" />
+        </geometry>
+      </visual>
+  </link>
+  
+  <joint name="base_link2base_footprint" type="fixed">
+    <parent link="base_footprint" />
+    <child link="base_link" />
+    <origin xyz="0 0 0.19" />
+  </joint>
+
   <link
     name="Chassis body">
     <inertial>
@@ -12,14 +27,14 @@
         xyz="-0.033482 0.22487 0.0057368"
         rpy="0 0 1.57" />
       <mass
-        value="1.5192" />
+        value="1.5" />
       <inertia
-        ixx="0.048829"
-        ixy="1.5025E-05"
-        ixz="1.729E-06"
-        iyy="0.0069994"
-        iyz="-0.002399"
-        izz="0.052057" />
+        ixx="0.05"
+        ixy="0"
+        ixz="0"
+        iyy="0.007"
+        iyz="0"
+        izz="0.052" />
     </inertial>
     <visual>
       <origin
@@ -52,20 +67,20 @@
   </joint>
 
   <link
-    name="Left rear wheel">
+    name="Left_rear_wheel">
     <inertial>
       <origin
         xyz="-7.8407E-07 -2.4326E-05 0.002005"
         rpy="0 0 0" />
       <mass
-        value="1.3121" />
+        value="1.25" />
       <inertia
-        ixx="0.004883"
-        ixy="-2.8757E-07"
-        ixz="-1.4658E-07"
-        iyy="0.0048836"
-        iyz="-5.3568E-08"
-        izz="0.0087354" />
+        ixx="0.0049"
+        ixy="0"
+        ixz="0"
+        iyy="0.005"
+        iyz="0"
+        izz="0.0087" />
     </inertial>
     <visual>
       <origin
@@ -92,7 +107,7 @@
     </collision>
   </link>
   <joint
-    name="Left rear wheel"
+    name="Left_rear_wheel_joint"
     type="continuous">
     <origin
       xyz="-0.30884 0.04815 -0.080406"
@@ -100,30 +115,30 @@
     <parent
       link="Chassis body" />
     <child
-      link="Left rear wheel" />
+      link="Left_rear_wheel" />
     <axis
       xyz="0 0 -1" />
   </joint>
   <link
-    name="Right rear wheel">
+    name="Right_rear_wheel">
     <inertial>
       <origin
         xyz="4.9952E-06 2.3117E-05 0.0019578"
         rpy="0 0 0" />
       <mass
-        value="1.313" />
+        value="1.25" />
       <inertia
-        ixx="0.0048865"
-        ixy="3.201E-07"
-        ixz="1.7545E-07"
-        iyy="0.0048869"
-        iyz="-2.3207E-07"
-        izz="0.0087402" />
+        ixx="0.0049"
+        ixy="0"
+        ixz="0"
+        iyy="0.005"
+        iyz="0"
+        izz="0.0087" />
     </inertial>
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 3.14 0" />
       <geometry>
         <mesh
           filename="package://segway_e1_description/meshes/Wheel.STL" />
@@ -145,20 +160,20 @@
     </collision>
   </link>
   <joint
-    name="Right rear wheel"
+    name="Right_rear_wheel_joint"
     type="continuous">
     <origin
       xyz="0.24188 0.04815 -0.080406"
-      rpy="1.5708 0 -1.5708" />
+      rpy="1.5708 0 1.5708" />
     <parent
       link="Chassis body" />
     <child
-      link="Right rear wheel" />
+      link="Right_rear_wheel" />
     <axis
       xyz="0 0 -1" />
   </joint>
   <link
-    name="Chassis front beam">
+    name="Chassis_front_beam">
     <inertial>
       <origin
         xyz="-8.6161E-10 3.9501E-05 0.0062593"
@@ -166,12 +181,12 @@
       <mass
         value="0.48416" />
       <inertia
-        ixx="0.00050823"
-        ixy="-1.2209E-08"
-        ixz="4.3336E-11"
-        iyy="0.0023652"
-        iyz="2.6588E-07"
-        izz="0.0023821" />
+        ixx="0.0005"
+        ixy="0"
+        ixz="0"
+        iyy="0.0024"
+        iyz="0"
+        izz="0.0024" />
     </inertial>
     <visual>
       <origin
@@ -198,7 +213,7 @@
     </collision>
   </link>
   <joint
-    name="Chassis front beam"
+    name="Chassis_front_beam_joint"
     type="revolute">
     <origin
       xyz="-0.0335 0.504 -0.0515"
@@ -206,35 +221,35 @@
     <parent
       link="Chassis body" />
     <child
-      link="Chassis front beam" />
+      link="Chassis_front_beam" />
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-3.14"
-      upper="3.14"
+      lower="-0.3"
+      upper="0.3"
       effort="0"
       velocity="0" />
   </joint>
   <link
-    name="Left front wheel">
+    name="Right_front_wheel">
     <inertial>
       <origin
         xyz="-7.0112E-05 8.4133E-05 0.54476"
         rpy="0 0 0" />
       <mass
-        value="1.2504" />
+        value="1.25" />
       <inertia
-        ixx="0.0046772"
-        ixy="1.3239E-07"
-        ixz="2.8374E-07"
-        iyy="0.0046777"
-        iyz="1.339E-07"
-        izz="0.0086591" />
+        ixx="0.0049"
+        ixy="0"
+        ixz="0"
+        iyy="0.005"
+        iyz="0"
+        izz="0.0087" />
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+        xyz="0 0 0.017"
+        rpy="0 3.14 0" />
       <geometry>
         <mesh
           filename="package://segway_e1_description/meshes/Wheel.STL" />
@@ -256,37 +271,37 @@
     </collision>
   </link>
   <joint
-    name="Left front wheel"
+    name="Right_front_wheel_joint"
     type="continuous">
     <origin
       xyz="0.27184 0.0001 -0.028906"
-      rpy="1.5708 0 -1.5708" />
+      rpy="1.5708 0 1.5708" />
     <parent
-      link="Chassis front beam" />
+      link="Chassis_front_beam" />
     <child
-      link="Left front wheel" />
+      link="Right_front_wheel" />
     <axis
       xyz="0 0 -1" />
   </joint>
   <link
-    name="Right front wheel">
+    name="Left_front_wheel">
     <inertial>
       <origin
         xyz="-7.0038E-05 8.4129E-05 0.54476"
         rpy="0 0 0" />
       <mass
-        value="1.2504" />
+        value="1.25" />
       <inertia
-        ixx="0.0046772"
-        ixy="1.3959E-07"
-        ixz="2.8223E-07"
-        iyy="0.0046777"
-        iyz="1.3406E-07"
-        izz="0.0086591" />
+        ixx="0.0049"
+        ixy="0"
+        ixz="0"
+        iyy="0.005"
+        iyz="0"
+        izz="0.0087" />
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
+        xyz="0 0 0.017"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -309,16 +324,224 @@
     </collision>
   </link>
   <joint
-    name="Right front wheel"
+    name="Left_front_wheel_joint"
     type="continuous">
     <origin
       xyz="-0.27184 0.0001 -0.028906"
       rpy="1.5708 0 1.5708" />
     <parent
-      link="Chassis front beam" />
+      link="Chassis_front_beam" />
     <child
-      link="Right front wheel" />
+      link="Left_front_wheel" />
     <axis
       xyz="0 0 -1" />
   </joint>
+
+   <transmission name="Right_front_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Right_front_wheel_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Right_front_wheel_motor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+    <transmission name="Left_front_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Left_front_wheel_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Left_front_wheel_motor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+    <transmission name="Left_rear_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Left_rear_wheel_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Left_rear_wheel_motor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+    <transmission name="Right_rear_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Right_rear_wheel_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Right_rear_wheel_motor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+    <transmission name="Chassis_front_beam_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Chassis_front_beam_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Chassis_front_beam_motor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- <transmission name="${name}_transmission" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${name}_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${name}_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> -->
+
+  <link name="laser">
+        <visual>
+            <geometry>
+                <cylinder radius="0.03" length="0.05" />
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <material name="black" />
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.03" length="0.05" />
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        </collision>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.1" />
+        <inertia
+          ixx="0.0"
+          ixy="0.0"
+          ixz="0.0"
+          iyy="0.0"
+          iyz="0.0"
+          izz="0.0" />
+        </inertial>
+    </link>
+
+    <joint name="laser2base_link" type="fixed">
+        <parent link="base_link" />
+        <child link="laser" />
+        <origin xyz="0.0 0.0 0.12" />
+    </joint>
+
+  <gazebo reference="laser">
+    <sensor type="ray" name="rplidar">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>5.5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-3</min_angle>
+            <max_angle>3</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_rplidar" filename="libgazebo_ros_laser.so">
+        <topicName>/scan</topicName>
+        <frameName>laser</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>/racebot</robotNamespace>
+    <robotParam>robot_description</robotParam>
+    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    <legacyModeNS>true</legacyModeNS>
+  </plugin>
+  </gazebo> 
+
+  <!-- <gazebo>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+        <updateRate>100.0</updateRate>
+        <robotNamespace>/</robotNamespace>
+        <leftFrontJoint>Left_front_wheel_joint</leftFrontJoint>
+        <rightFrontJoint>Right_front_wheel_joint</rightFrontJoint>
+        <leftRearJoint>Left_rear_wheel_joint</leftRearJoint>
+        <rightRearJoint>Right_rear_wheel_joint</rightRearJoint>
+        <wheelSeparation>0.492</wheelSeparation>
+        <wheelDiameter>0.216</wheelDiameter>
+        <robotBaseFrame>base_footprint</robotBaseFrame>
+        <torque>20</torque>
+        <topicName>cmd_vel</topicName>
+        <broadcastTF>false</broadcastTF>
+        <odometryFrame>odom</odometryFrame>
+        <odometryTopic>odom</odometryTopic> 
+       <robotBaseFrame>base_footprint</robotBaseFrame>
+       <publishTf>1</publishTf>
+    </plugin>
+  </gazebo> -->
+
+    <!-- <gazebo>
+        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+            <rosDebugLevel>Debug</rosDebugLevel>
+            <publishWheelTF>False</publishWheelTF>
+            <robotNamespace>/</robotNamespace>
+            <publishTf>1</publishTf>
+            <publishWheelJointState>False</publishWheelJointState>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>100.0</updateRate>
+            <legacyMode>true</legacyMode>
+            <leftJoint>Left_front_wheel_joint</leftJoint> 
+            <rightJoint>Right_front_wheel_joint</rightJoint> 
+            <wheelSeparation>0.492</wheelSeparation> 
+            <wheelDiameter>0.216</wheelDiameter> 
+            <broadcastTF>1</broadcastTF>
+            <wheelTorque>30</wheelTorque>
+            <wheelAcceleration>1.8</wheelAcceleration>
+            <commandTopic>cmd_vel</commandTopic> 
+            <odometryFrame>odom</odometryFrame>
+            <odometryTopic>odom</odometryTopic> 
+            <robotBaseFrame>base_footprint</robotBaseFrame> 
+        </plugin>
+    </gazebo> -->
+
+    <!-- <gazebo>
+        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+            <rosDebugLevel>Debug</rosDebugLevel>
+            <publishWheelTF>False</publishWheelTF>
+            <robotNamespace>/</robotNamespace>
+            <publishTf>1</publishTf>
+            <publishWheelJointState>False</publishWheelJointState>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>100.0</updateRate>
+            <legacyMode>true</legacyMode>
+            <leftJoint>Left_rear_wheel_joint</leftJoint> 
+            <rightJoint>Right_rear_wheel_joint</rightJoint> 
+            <wheelSeparation>0.545</wheelSeparation> 
+            <wheelDiameter>0.216</wheelDiameter> 
+            <broadcastTF>1</broadcastTF>
+            <wheelTorque>30</wheelTorque>
+            <wheelAcceleration>1.8</wheelAcceleration>
+            <commandTopic>cmd_vel</commandTopic> 
+            <odometryFrame>odom</odometryFrame>
+            <odometryTopic>odom</odometryTopic> 
+            <robotBaseFrame>base_footprint</robotBaseFrame> 
+        </plugin>
+    </gazebo> -->
 </robot>

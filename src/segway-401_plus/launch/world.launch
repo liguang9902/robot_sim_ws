@@ -1,0 +1,24 @@
+<launch>
+    
+    <param name="robot_description" textfile="$(find segway_e1_description)/urdf/segway_e1.urdf" />
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find gazebo)/world/box_house.world" />
+    </include>
+
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find segway_e1_description)/urdf/segway_e1.urdf -urdf -model segway_e1_description"
+    output="screen" />
+  <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+
+  <include file="$(find segway_e1_description)/launch/control.launch" ns="/"/>
+
+  <!-- <node pkg="commsg" type="keyboard_teleop.py" name="keyboard_teleop" /> -->
+</launch>
